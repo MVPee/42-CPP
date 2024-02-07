@@ -12,7 +12,8 @@ class PhoneBook {
         ~PhoneBook(void);
 
         void addContact(void);
-        void displayContact(void);
+        void displayAllContacts(void);
+        void displayContactWithIndex(unsigned int index);
 };
 
 #endif
