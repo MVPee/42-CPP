@@ -20,27 +20,27 @@ void PhoneBook::addContact(void) {
     if (contactCount >= 8)
         contactCount = 0;
     
-    std::cout << "FirstName: ";
+    std::cout << MAGENTA << "FirstName: " << YELLOW;
     std::cin >> input;
     contacts[contactCount].setFirstName(input);
 
-    std::cout << "LastName: ";
+    std::cout << MAGENTA << "LastName: " << YELLOW;
     std::cin >> input;
     contacts[contactCount].setLastName(input);
 
-    std::cout << "NickName: ";
+    std::cout << MAGENTA << "NickName: " << YELLOW;
     std::cin >> input;
     contacts[contactCount].setNickName(input);
 
-    std::cout << "PhoneNumber: ";
+    std::cout << MAGENTA << "PhoneNumber: " << YELLOW;
     std::cin >> input;
     contacts[contactCount].setPhoneNumber(input);
 
-    std::cout << "Secret: ";
+    std::cout << MAGENTA << "Secret: " << YELLOW;
     std::cin >> input;
     contacts[contactCount].setSecret(input);
 
-    std::cout << "\nContact Created succesfully!" << std::endl;
+    std::cout << GREEN << "\nContact Created succesfully!" << RESET << std::endl;
     contactCount++;
 }
 
@@ -54,7 +54,7 @@ static std::string toTenChar(std::string str) {
 
 void PhoneBook::displayAllContacts(void) {
     for (int i = 0; i < 8; i++)
-        std::cout << "         " << i << "|" << toTenChar(contacts[i].getFirstName()) << "|" << toTenChar(contacts[i].getLastName()) << "|" << toTenChar(contacts[i].getNickName()) << std::endl;
+        std::cout << YELLOW << "         " << i << "|" << toTenChar(contacts[i].getFirstName()) << "|" << toTenChar(contacts[i].getLastName()) << "|" << toTenChar(contacts[i].getNickName()) << RESET << std::endl;
 }
 
 void PhoneBook::displayContactWithIndex(unsigned int index) {

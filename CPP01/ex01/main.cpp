@@ -18,10 +18,10 @@ int main(void)
     int index;
     PhoneBook phoneBook;
 
-    std::cout << "Hello my friends!\nHow Can I help you?" << std::endl;
+    std::cout << RED << "Hello my friends!\n" << GREEN << "How Can I help you?" << RESET << std::endl;
     while (inputUser != "EXIT") {
         if (inputUser != "EXIT")
-            std::cout << "\nADD | SEARCH | EXIT\n" << std::endl;
+            std::cout << MAGENTA << "\nADD" << YELLOW << " | " << CYAN << "SEARCH" << YELLOW << " | " << RED << "EXIT\n" << RESET << std::endl;
         
         std::cin >> inputUser;
 
@@ -33,7 +33,7 @@ int main(void)
             index = 8;
             while (index < 0 || index > 7 || !isNumeric(inputUser)) 
             {
-                std::cout << "Enter a valid index: ";
+                std::cout << CYAN << "Enter a valid index: " << YELLOW;
                 std::cin >> inputUser;
                 if (inputUser == "EXIT")
                     return (std::cout << "\nGoodbye!" << std::endl, 0);
@@ -42,6 +42,6 @@ int main(void)
             phoneBook.displayContactWithIndex((unsigned int)index);
         }
     }
-    std::cout << "\nGoodbye!" << std::endl;
+    std::cout << RED << "\nGoodbye!" << RESET << std::endl;
     return (0);
 }
