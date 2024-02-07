@@ -46,13 +46,10 @@ void PhoneBook::addContact(void) {
 
 static std::string toTenChar(std::string str) {
     std::string spaces(10, ' ');
-    unsigned int len = str.size();
 
-    if (len > 10)
+    if (str.size() > 10)
         return str.substr(0, 9) + ".";
-    else
-        return spaces.substr(0, 10 - len) + str;
-    return NULL;
+    return spaces.substr(0, 10 - str.size()) + str;
 }
 
 void PhoneBook::displayAllContacts(void) {

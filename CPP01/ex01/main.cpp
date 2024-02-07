@@ -35,6 +35,8 @@ int main(void)
             {
                 std::cout << "Enter a valid index: ";
                 std::cin >> inputUser;
+                if (inputUser == "EXIT")
+                    return (std::cout << "\nGoodbye!" << std::endl, 0);
                 index = atoi(inputUser.c_str());
             }
             phoneBook.displayContactWithIndex((unsigned int)index);
