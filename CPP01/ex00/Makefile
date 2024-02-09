@@ -1,7 +1,11 @@
-NAME = megaphone
+NAME = BraiiiiiiinnnzzzZ
 
 OBJS_DIR = objs
-SRCS = megaphone.cpp
+SRCS = 	main.cpp \
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp
+
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
@@ -14,7 +18,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@g++ $(FLAGS) $(OBJS) -o $(NAME)
-	@echo "\n${RED}./megaphone \"MESSAGE\"\n${NC}"
+	@echo "\n${RED}./BraiiiiiiinnnzzzZ\n${NC}"
 
 $(OBJS_DIR)/%.o: %.cpp
 	@mkdir -p $(OBJS_DIR)
@@ -27,3 +31,6 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+run: all
+	./BraiiiiiiinnnzzzZ
