@@ -1,11 +1,12 @@
 #include "HumanB.hpp"
 
 HumanB::HumanB(std::string name) {
-    this->name = name;
     this->weapon = NULL;
+    this->name = name;
+}
+HumanB::~HumanB(void) {
     return ;
 }
-HumanB::~HumanB(void) { return ; }
 
 void HumanB::setWeapon(Weapon& weapon) {
     this->weapon = &weapon;

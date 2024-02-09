@@ -2,10 +2,11 @@
 
 HumanA::HumanA(std::string name, Weapon& weapon) : weapon(weapon){
     this->name = name;
-    this->weapon = weapon;
+}
+
+HumanA::~HumanA(void) {
     return ;
 }
-HumanA::~HumanA(void) { return ; }
 
 void HumanA::setWeapon(Weapon& weapon) {
     this->weapon = weapon;
