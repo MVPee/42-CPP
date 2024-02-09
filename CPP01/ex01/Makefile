@@ -1,9 +1,9 @@
-NAME = phoneBook
+NAME = "Moar brainz!"
 
 OBJS_DIR = objs
 SRCS = 	main.cpp \
-		Contact.cpp \
-		PhoneBook.cpp
+		Zombie.cpp \
+		zombieHorde.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
@@ -17,7 +17,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@g++ $(FLAGS) $(OBJS) -o $(NAME)
-	@echo "\n${RED}./phoneBook \n${NC}"
+	@echo "\n${RED}./Moar brainz!\n${NC}"
 
 $(OBJS_DIR)/%.o: %.cpp
 	@mkdir -p $(OBJS_DIR)
@@ -32,4 +32,4 @@ fclean: clean
 re: fclean all
 
 run: all
-	@./phoneBook
+	./$(NAME)

@@ -1,47 +1,12 @@
-#include <iostream>
-#include <cstring>
-#include <cstdlib>
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
 
-static bool isNumeric(std::string str) {
-    int i = -1;
-    while(str[++i])
-        if (!isdigit(str[i]))
-            return false;
-    return true;
-}
+#define N 5
 
-int main(void)
-{
-    std::string inputUser;
-    int index;
-    PhoneBook phoneBook;
-
-    std::cout << RED << "Hello my friends!\n" << GREEN << "How Can I help you?" << RESET << std::endl;
-    while (inputUser != "EXIT") {
-        if (inputUser != "EXIT")
-            std::cout << MAGENTA << "\nADD" << YELLOW << " | " << CYAN << "SEARCH" << YELLOW << " | " << RED << "EXIT\n" << RESET << std::endl;
-        
-        std::cin >> inputUser;
-
-        if (inputUser == "ADD")
-            phoneBook.addContact();
-        else if (inputUser == "SEARCH") {
-            phoneBook.displayAllContacts();
-
-            index = 8;
-            while (index < 0 || index > 7 || !isNumeric(inputUser)) 
-            {
-                std::cout << CYAN << "Enter a valid index: " << YELLOW;
-                std::cin >> inputUser;
-                if (inputUser == "EXIT")
-                    return (std::cout << RED << "\nGoodbye!" << RESET << std::endl, 0);
-                index = atoi(inputUser.c_str());
-            }
-            phoneBook.displayContactWithIndex((unsigned int)index);
-        }
+int main(void) {
+    Zombie *horde = zombieHorde(N, "zombard");
+    for (int i = 0; i < N; i++) {
+        horde[i].annonce();
     }
-    std::cout << RED << "\nGoodbye!" << RESET << std::endl;
+    delete[] horde;
     return (0);
 }
