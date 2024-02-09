@@ -1,4 +1,4 @@
-NAME = "Moar brainz!"
+NAME = MoarBrainz!
 
 OBJS_DIR = objs
 SRCS = 	main.cpp \
@@ -17,7 +17,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@g++ $(FLAGS) $(OBJS) -o $(NAME)
-	@echo "\n${RED}./Moar brainz!\n${NC}"
+	@echo "\n${RED}./MoarBrainz!\n${NC}"
 
 $(OBJS_DIR)/%.o: %.cpp
 	@mkdir -p $(OBJS_DIR)

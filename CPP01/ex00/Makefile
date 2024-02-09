@@ -33,4 +33,4 @@ fclean: clean
 re: fclean all
 
 run: all
-	./BraiiiiiiinnnzzzZ
+	./$(NAME)
