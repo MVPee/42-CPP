@@ -60,6 +60,6 @@ void Harl::complain(std::string level) {
             error();
             break;
         default:
-            std::cout << "[ Nothing ] Stop it! Get some help!" << std::endl;
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
 }
