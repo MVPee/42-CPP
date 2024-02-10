@@ -25,15 +25,15 @@ void Harl::error( void )
 }
 
 int Harl::getLevel(std::string level) {
-    if (level == "DEBUG")
-        return (1);
-    else if (level == "INFO")
-        return (2);
-    else if (level == "WARNING")
-        return (3);
-    else if (level == "ERROR")
-        return (4);
-    return (-1);
+    const char* levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+    for (int i = 0; i < (int)(sizeof(levels) / sizeof(levels[0])); ++i) {
+        if (level == levels[i]) {
+            return i + 1;
+        }
+    }
+
+    return -1;
 }
 
 void Harl::complain(std::string level) {
