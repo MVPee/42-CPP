@@ -6,10 +6,22 @@
 
 static bool isNumeric(std::string str) {
     int i = -1;
+
     while(str[++i])
         if (!isdigit(str[i]))
             return false;
     return true;
+}
+
+static bool cmpCase(std::string str, std::string str2) {
+    int i = -1;
+
+    if (str == "")
+        return (true);
+    while(str[++i])
+        if (tolower(str[i]) != tolower(str2[i]))
+            return (true);
+    return (false);
 }
 
 int main(void)
@@ -18,16 +30,17 @@ int main(void)
     int index;
     PhoneBook phoneBook;
 
+    inputUser.assign("");
     std::cout << RED << "Hello my friends!\n" << GREEN << "How Can I help you?" << RESET << std::endl;
-    while (inputUser != "EXIT") {
+    while (cmpCase(inputUser, "EXIT")) {
         if (inputUser != "EXIT")
             std::cout << MAGENTA << "\nADD" << YELLOW << " | " << CYAN << "SEARCH" << YELLOW << " | " << RED << "EXIT\n" << RESET << std::endl;
         
         std::cin >> inputUser;
 
-        if (inputUser == "ADD")
+        if (!cmpCase(inputUser, "ADD"))
             phoneBook.addContact();
-        else if (inputUser == "SEARCH") {
+        else if (!cmpCase(inputUser, "SEARCH")) {
             phoneBook.displayAllContacts();
 
             index = 8;
@@ -35,7 +48,7 @@ int main(void)
             {
                 std::cout << CYAN << "Enter a valid index: " << YELLOW;
                 std::cin >> inputUser;
-                if (inputUser == "EXIT")
+                if (!cmpCase(inputUser, "EXIT"))
                     return (std::cout << RED << "\nGoodbye!" << RESET << std::endl, 0);
                 index = atoi(inputUser.c_str());
             }

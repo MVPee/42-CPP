@@ -1,6 +1,14 @@
 #include <iostream>
 #include "PhoneBook.hpp"
 
+static bool isNumeric(std::string str) {
+    int i = -1;
+    while(str[++i])
+        if (!isdigit(str[i]))
+            return false;
+    return true;
+}
+
 PhoneBook::PhoneBook(void) {
     contactCount = 0;
     for (unsigned int i = 0; i < 8; i++) {
@@ -32,9 +40,13 @@ void PhoneBook::addContact(void) {
     std::cin >> input;
     contacts[contactCount].setNickName(input);
 
-    std::cout << MAGENTA << "PhoneNumber: " << YELLOW;
-    std::cin >> input;
-    contacts[contactCount].setPhoneNumber(input);
+    input.assign("a");
+    while(!isNumeric(input))
+    {
+        std::cout << MAGENTA << "PhoneNumber: " << YELLOW;
+        std::cin >> input;
+        contacts[contactCount].setPhoneNumber(input);
+    }
 
     std::cout << MAGENTA << "Secret: " << YELLOW;
     std::cin >> input;
