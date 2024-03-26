@@ -30,14 +30,20 @@ void PhoneBook::addContact(void) {
     
     std::cout << MAGENTA << "FirstName: " << YELLOW;
     std::cin >> input;
+    if (std::cin.eof())
+        return ;
     contacts[contactCount].setFirstName(input);
 
     std::cout << MAGENTA << "LastName: " << YELLOW;
     std::cin >> input;
+    if (std::cin.eof())
+        return ;
     contacts[contactCount].setLastName(input);
 
     std::cout << MAGENTA << "NickName: " << YELLOW;
     std::cin >> input;
+    if (std::cin.eof())
+        return ;
     contacts[contactCount].setNickName(input);
 
     input.assign("a");
@@ -45,11 +51,15 @@ void PhoneBook::addContact(void) {
     {
         std::cout << MAGENTA << "PhoneNumber: " << YELLOW;
         std::cin >> input;
+        if (std::cin.eof())
+            return ;
         contacts[contactCount].setPhoneNumber(input);
     }
 
     std::cout << MAGENTA << "Secret: " << YELLOW;
     std::cin >> input;
+    if (std::cin.eof())
+        return ;
     contacts[contactCount].setSecret(input);
 
     std::cout << GREEN << "\nContact Created succesfully!" << RESET << std::endl;

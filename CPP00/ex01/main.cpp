@@ -33,10 +33,14 @@ int main(void)
     inputUser.assign("");
     std::cout << RED << "Hello my friends!\n" << GREEN << "How Can I help you?" << RESET << std::endl;
     while (cmpCase(inputUser, "EXIT")) {
-        if (inputUser != "EXIT")
-            std::cout << MAGENTA << "\nADD" << YELLOW << " | " << CYAN << "SEARCH" << YELLOW << " | " << RED << "EXIT\n" << RESET << std::endl;
-        
+        if (!cmpCase(inputUser, "EXIT") || std::cin.eof())
+            break;
+
+        std::cout << MAGENTA << "\nADD" << YELLOW << " | " << CYAN << "SEARCH" << YELLOW << " | " << RED << "EXIT\n" << RESET << std::endl;
+
         std::cin >> inputUser;
+        if (std::cin.eof())
+            break;
 
         if (!cmpCase(inputUser, "ADD"))
             phoneBook.addContact();
@@ -48,11 +52,18 @@ int main(void)
             {
                 std::cout << CYAN << "Enter a valid index: " << YELLOW;
                 std::cin >> inputUser;
+                if (std::cin.eof()==1)
+                {
+                    std::cin.clear();
+                    std::cin.ignore();
+                    break;
+                }
                 if (!cmpCase(inputUser, "EXIT"))
                     return (std::cout << RED << "\nGoodbye!" << RESET << std::endl, 0);
                 index = atoi(inputUser.c_str());
             }
-            phoneBook.displayContactWithIndex((unsigned int)index);
+            if (index >= 0 && index <= 7)
+                phoneBook.displayContactWithIndex((unsigned int)index);
         }
     }
     std::cout << RED << "\nGoodbye!" << RESET << std::endl;
