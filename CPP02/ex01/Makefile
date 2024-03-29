@@ -1,8 +1,8 @@
-NAME = harlFilter
+NAME = FIXED
 
 OBJS_DIR = objs
 SRCS = 	main.cpp \
-		Harl.cpp
+		Fixed.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
