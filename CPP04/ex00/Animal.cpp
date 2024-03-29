@@ -44,7 +44,7 @@ void Animal::makeSound(void) const {
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string Animal::getType(void) const {
+const std::string& Animal::getType(void) const {
 	return (this->type);
 }
 
