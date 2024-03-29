@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = ScavTrap
 
 OBJS_DIR = objs
 SRCS = 	main.cpp \

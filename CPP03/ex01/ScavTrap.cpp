@@ -12,7 +12,7 @@ ScavTrap::ScavTrap(std::string name){
 	std::cout << "Constructor ScavTrap: " << name << std::endl;
 }
 
-ScavTrap::ScavTrap( const ScavTrap & src ) : ClapTrap(src){
+ScavTrap::ScavTrap( const ScavTrap& src ) : ClapTrap(src){
 	std::cout << "Copy constructor ScavTrap called" << std::endl;
 	*this = src;
 }
@@ -29,7 +29,7 @@ ScavTrap::~ScavTrap() {
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-ScavTrap & ScavTrap::operator=( ScavTrap const & rhs ) {
+ScavTrap & ScavTrap::operator=( ScavTrap const& rhs ) {
 	if (this != &rhs) {
 		this->name = rhs.name;
 		this->health = rhs.health;

@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = FragTrap
 
 OBJS_DIR = objs
 SRCS = 	main.cpp \

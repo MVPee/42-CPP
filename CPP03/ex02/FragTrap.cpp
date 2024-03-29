@@ -47,9 +47,4 @@ void FragTrap::highFivesGuys(void) const {
 	std::cout << name << " do a positive high fives to you in the standart output!" << std::endl;
 }
 
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
-
-
 /* ************************************************************************** */
