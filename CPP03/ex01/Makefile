@@ -1,8 +1,9 @@
-NAME = FIXED
+NAME = ClapTrap
 
 OBJS_DIR = objs
 SRCS = 	main.cpp \
-		Fixed.cpp
+		ClapTrap.cpp \
+		ScavTrap.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
