@@ -1,7 +1,13 @@
-NAME = Polymorphism
+NAME = Abstract
 
 OBJS_DIR = objs
-SRCS = 	main.cpp
+SRCS = 	main.cpp \
+		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
+		Brain.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
