@@ -1,7 +1,10 @@
-NAME = Polymorphism
+NAME = Interface
 
 OBJS_DIR = objs
-SRCS = 	main.cpp
+SRCS = 	main.cpp \
+		AMateria.cpp \
+		Ice.cpp \
+		Cure.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
