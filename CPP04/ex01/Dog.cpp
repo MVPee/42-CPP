@@ -32,6 +32,7 @@ Dog::~Dog() {
 Dog& Dog::operator=( Dog const& rhs ) {
 	if (this != &rhs)
 		this->type = rhs.getType();
+		this->brain = new Brain(*rhs.brain);
 	return *this;
 }
 

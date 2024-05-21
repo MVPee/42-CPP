@@ -32,6 +32,7 @@ Cat::~Cat() {
 Cat& Cat::operator=( Cat const& rhs ) {
 	if (this != &rhs)
 		this->type = rhs.getType();
+		this->brain = new Brain(*rhs.brain);
 	return *this;
 }
 
