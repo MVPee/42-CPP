@@ -30,9 +30,11 @@ Cat::~Cat() {
 */
 
 Cat& Cat::operator=( Cat const& rhs ) {
-	if (this != &rhs)
+	if (this != &rhs) {
 		this->type = rhs.getType();
+		delete this->brain;
 		this->brain = new Brain(*rhs.brain);
+	}
 	return *this;
 }
 
