@@ -71,6 +71,18 @@ void Bureaucrat::signForm(AForm &form) {
 	}
 }
 
+void Bureaucrat::executeForm(AForm const & form) const {
+    try {
+        form.execute(*this);
+        std::cout << this->_name << " executed " << form.getName() << std::endl;
+    }
+	catch (const std::exception &e) {
+        std::cerr << ORANGE << this->_name << " couldn’t execute " << form.getName() << " because:\n" << \
+		this->_name << "'s grade (" << this->_grade << ") < " << form.getName() << \
+		" minimum grade to execute (" << form.getExecuteGrade() << ")." <<  NONE << std::endl;
+    }
+}
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

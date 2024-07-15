@@ -40,5 +40,17 @@ int main(void) {
     catch (std::exception & e) {
         std::cerr << ORANGE << e.what() << NONE <<std::endl;
     }
+
+    std::cout << std::endl;
+    std::cout << "PART 4." << std::endl;
+    try {
+        Bureaucrat perfecto("Perfecto", 24);
+        PresidentialPardonForm formatator("Formatator");
+        perfecto.signForm(formatator);
+        perfecto.executeForm(formatator);
+    }
+    catch (std::exception & e) {
+        std::cerr << ORANGE << e.what() << NONE <<std::endl;
+    }
     return (0);
 }

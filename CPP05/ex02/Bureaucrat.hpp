@@ -23,6 +23,8 @@ class Bureaucrat {
         ~Bureaucrat();
         Bureaucrat& operator=(Bureaucrat const& rhs);
 
+        void executeForm(AForm const & form) const;
+
         std::string getName() const;
         int getGrade() const;
         void increment();
