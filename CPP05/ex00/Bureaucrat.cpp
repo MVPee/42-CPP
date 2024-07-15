@@ -4,6 +4,8 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
+Bureaucrat::Bureaucrat() : _name("Default"), _grade(150) {}
+
 Bureaucrat::Bureaucrat(std::string name, int grade)
 	: _name(name), _grade(grade) {
 	std::cout << GREEN << "[ Bureaucrat " + this->_name + " ] Constructer called." << NONE << std::endl;
