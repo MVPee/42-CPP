@@ -4,16 +4,18 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade) {
-	std::cout << GREEN << "[ Bureaucrat " + this->name + " ] Constructer called." << NONE << std::endl;
+Bureaucrat::Bureaucrat(std::string name, int grade)
+	: _name(name), _grade(grade) {
+	std::cout << GREEN << "[ Bureaucrat " + this->_name + " ] Constructer called." << NONE << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
 		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade) {
-	std::cout << GREEN << "[ Bureaucrat " + this->name + " ] Copied Constructer called." << NONE << std::endl;
+Bureaucrat::Bureaucrat(const Bureaucrat& other)
+	: _name(other._name), _grade(other._grade) {
+	std::cout << GREEN << "[ Bureaucrat " + this->_name + " ] Copied Constructer called." << NONE << std::endl;
 }
 
 /*
@@ -21,7 +23,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.
 */
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << RED << "[ Bureaucrat " + this->name + " ] Destructor called." << NONE << std::endl;
+	std::cout << RED << "[ Bureaucrat " + this->_name + " ] Destructor called." << NONE << std::endl;
 }
 
 /*
@@ -30,7 +32,7 @@ Bureaucrat::~Bureaucrat() {
 
 Bureaucrat& Bureaucrat::operator=( Bureaucrat const& rhs ) {
 	if (this != &rhs)
-        this->grade = rhs.grade;
+        this->_grade = rhs._grade;
 	return *this;
 }
 
@@ -44,28 +46,26 @@ std::ostream & operator<<(std::ostream & o, Bureaucrat const & i) {
 */
 
 void Bureaucrat::increment(void) {
-	if (this->grade - 1 < 1)
+	if (this->_grade - 1 < 1)
 		throw GradeTooHighException();
-	else
-		this->grade = this->grade - 1;
+	this->_grade--;
 }
 
 void Bureaucrat::decrement(void) {
-	if (this->grade + 1 > 150)
+	if (this->_grade + 1 > 150)
 		throw GradeTooHighException();
-	else
-		this->grade = this->grade + 1;
+	this->_grade++;
 }
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string Bureaucrat::getName(void) const { return (name); }
-int Bureaucrat::getGrade(void) const { return (grade); }
+std::string Bureaucrat::getName(void) const { return (this->_name); }
+int Bureaucrat::getGrade(void) const { return (this->_grade); }
 
 /*
-** --------------------------------- Exceptions --------------------------------
+** --------------------------------- EXCEPTIONS -------------------------------
 */
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
