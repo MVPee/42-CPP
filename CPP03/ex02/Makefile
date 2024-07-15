@@ -17,12 +17,12 @@ NC=\033[0m
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@g++ $(FLAGS) $(OBJS) -o $(NAME)
+	@c++ $(FLAGS) $(OBJS) -o $(NAME)
 	@echo "\n${RED}./$(NAME)\n${NC}"
 
 $(OBJS_DIR)/%.o: %.cpp
 	@mkdir -p $(OBJS_DIR)
-	@g++ $(FLAGS) -c $< -o $@
+	@c++ $(FLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS_DIR)

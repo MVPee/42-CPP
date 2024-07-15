@@ -32,10 +32,14 @@ int main(void)
     }
 
     std::cout << ORANGE << "PART4--- DEEP COPY" << NONE << std::endl;
-    Dog test;
-    Dog tmp = test;
+    // Dog test;
+    // Dog tmp;
+
+    // test = tmp;
 
     Cat test2;
-    Cat tmp2 = test2;
+    Cat tmp2;
+
+    test2 = tmp2;
     return (0);
 }

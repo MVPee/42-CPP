@@ -1,10 +1,8 @@
-NAME = Interface
+NAME = Exceptions
 
 OBJS_DIR = objs
 SRCS = 	main.cpp \
-		AMateria.cpp \
-		Ice.cpp \
-		Cure.cpp
+		Bureaucrat.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
