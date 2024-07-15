@@ -1,7 +1,9 @@
-NAME = Exceptions
+NAME = Form
 
 OBJS_DIR = objs
-SRCS = 	main.cpp
+SRCS = 	main.cpp \
+		Bureaucrat.cpp \
+		Form.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
