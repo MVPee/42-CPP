@@ -55,7 +55,7 @@ static bool isNumber(const std::string& literal) {
 static void charConvert(const std::string& literal) {
     if (!isNumber(literal)) {
         if (literal.length() == 1)
-            std::cout << "char: " << literal << std::endl;
+            std::cout << "char: '" << literal << "'" << std::endl;
         else
             std::cout << "char: '*'" << std::endl;
     } 
