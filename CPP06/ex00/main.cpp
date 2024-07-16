@@ -5,7 +5,6 @@ int main(int ac, char **av) {
         std::cerr << "Number(s) of argument(s)..." << std::endl;
         return (1);
     }
-    (void)av;
     ScalarConverter::convert(av[1]);
     return (0);
 }
