@@ -77,9 +77,11 @@ static void intConvert(const std::string& literal) {
     char *end;
     float num = strtof(literal.c_str(), &end);
 
-    if (!isNumber(literal)) {
-        std::cout << "int: impossible" << std::endl;
-    }
+    if (literal == "nan" || literal == "nanf" ||
+        literal == "-inf" || literal == "inf" ||
+        literal == "-inff" || literal == "inff") {
+		std::cout << "int: impossible" << std::endl;
+	}
     else if (*end != '\0' && *end != 'f' && *end != 'F')
         std::cout << "int: impossible" << std::endl;
     else
