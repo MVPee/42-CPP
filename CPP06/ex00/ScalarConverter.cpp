@@ -53,7 +53,12 @@ static bool isNumber(const std::string& literal) {
 }
 
 static void charConvert(const std::string& literal) {
-    if (!isNumber(literal)) {
+    if (literal == "nan" || literal == "nanf" ||
+        literal == "-inf" || literal == "inf" ||
+        literal == "-inff" || literal == "inff") {
+		std::cout << "int: impossible" << std::endl;
+	}
+    else if (!isNumber(literal)) {
         if (literal.length() == 1)
             std::cout << "char: '" << literal << "'" << std::endl;
         else
@@ -72,11 +77,9 @@ static void intConvert(const std::string& literal) {
     char *end;
     float num = strtof(literal.c_str(), &end);
 
-	if (literal == "nan" || literal == "nanf" ||
-        literal == "-inf" || literal == "inf" ||
-        literal == "-inff" || literal == "inff") {
-		std::cout << "int: impossible" << std::endl;
-	}
+    if (!isNumber(literal)) {
+        std::cout << "int: impossible" << std::endl;
+    }
     else if (*end != '\0' && *end != 'f' && *end != 'F')
         std::cout << "int: impossible" << std::endl;
     else
