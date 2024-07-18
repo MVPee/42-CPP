@@ -8,6 +8,7 @@ Serialization::Serialization() {
 }
 
 Serialization::Serialization( const Serialization & src ) {
+	(void)src;
 }
 
 /*
@@ -26,6 +27,7 @@ Serialization &				Serialization::operator=( Serialization const & rhs ) {
 	//{
 		//this->_value = rhs.getValue();
 	//}
+	(void)rhs;
 	return *this;
 }
 
