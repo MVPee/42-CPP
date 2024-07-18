@@ -1,8 +1,8 @@
-NAME = serialization
+NAME = base
 
 OBJS_DIR = objs
 SRCS = 	main.cpp \
-		Serialization.cpp
+		Base.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
