@@ -26,8 +26,15 @@ int main(void) {
         std::cout << "Value at arr3[" << arr3.size() << "]: " << value << std::endl;
 
     }
-    catch (std::out_of_range& e) {
-        std::cerr << "Out of Range error: " << e.what() << std::endl;
+    catch (std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
+    try {
+        arr1[-1] = 0;
+    }
+    catch (std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     return (0);
