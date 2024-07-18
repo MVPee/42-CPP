@@ -7,6 +7,13 @@
 # include <cctype>
 # include <string>
 
+typedef enum e_type {
+	CHAR = 1,
+	INT = 2,
+	FLOAT = 3,
+	DOUBLE = 4
+}	t_type;
+
 class ScalarConverter
 {
 	private:
