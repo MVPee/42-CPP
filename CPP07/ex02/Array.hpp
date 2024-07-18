@@ -14,10 +14,10 @@ class Array
 	public:
 
 		Array();
-		Array( Array const & src );
+		Array( Array<T> const & src );
 		Array(size_t size);
 		~Array();
-		Array &		operator=( Array const & rhs );
+		Array &		operator=( Array<T> const & rhs );
 
 		T &operator[](size_t index);
 
