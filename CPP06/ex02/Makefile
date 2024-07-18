@@ -1,8 +1,7 @@
 NAME = base
 
 OBJS_DIR = objs
-SRCS = 	main.cpp \
-		Base.cpp
+SRCS = 	main.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
