@@ -115,8 +115,6 @@ static void getInt(std::string literal, t_type type) {
 static void getFloat(std::string literal, t_type type) {
     if (type == CHAR)
         std::cout << "float: impossible" << std::endl;
-    if (type == INT)
-        std::cout << "float: " << literal << ".0f" << std::endl;
     else {
         char *end;
         float num = strtof(literal.c_str(), &end);
@@ -130,8 +128,6 @@ static void getFloat(std::string literal, t_type type) {
 static void getDouble(std::string literal, t_type type) {
     if (type == CHAR)
         std::cout << "double: impossible" << std::endl;
-    if (type == INT)
-        std::cout << "float: " << literal << ".0" << std::endl;
     else {
         char *end;
         float num = strtof(literal.c_str(), &end);
