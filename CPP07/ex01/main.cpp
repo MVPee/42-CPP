@@ -3,7 +3,7 @@
 # define SIZE 3
 
 template <typename T>
-void print(T value) {
+void print(T &value) {
     std::cout << "value: " << value << std::endl;
 }
 
