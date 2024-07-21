@@ -39,7 +39,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=( RobotomyRequestForm const &
 }
 
 std::ostream &operator<<(std::ostream &o, RobotomyRequestForm const &i) {
-    o << static_cast<AForm const &>(i); // Call the base class operator <<
+    o << static_cast<AForm const &>(i);
     return o;
 }
 

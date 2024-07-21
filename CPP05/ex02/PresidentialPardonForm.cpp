@@ -39,7 +39,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=( PresidentialPardonFor
 }
 
 std::ostream &operator<<(std::ostream &o, PresidentialPardonForm const &i) {
-    o << static_cast<AForm const &>(i); // Call the base class operator <<
+    o << static_cast<AForm const &>(i);
     return o;
 }
 
