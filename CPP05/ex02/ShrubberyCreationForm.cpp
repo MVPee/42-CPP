@@ -50,16 +50,20 @@ std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm const &i) {
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
     checkExecution(executor);
-    std::ofstream ofs((_target + "_shrubbery").c_str());
-    ofs << "       /-\\\n"
-        << "    /      \\\n"
-        << " /            \\\n"
-        << "{              }\n"
-        << " \\            /\n"
-        << "       | |\n"
-        << "       | |\n"
-        << "       | |";
-    ofs.close();
+    std::ofstream ofs((this->_target + "_shrubbery").c_str());
+    if (!ofs.is_open())
+        std::cerr << ORANGE << "Can't open " << this->_target << "_shrubbery" << NONE << std::endl;
+    else {
+        ofs << "       /-\\\n"
+            << "    /      \\\n"
+            << " /            \\\n"
+            << "{              }\n"
+            << " \\            /\n"
+            << "       | |\n"
+            << "       | |\n"
+            << "       | |";
+        ofs.close();
+    }
 }
 
 /*
