@@ -23,6 +23,6 @@ class Array
 
 		size_t size() const;
 };
-#include "Array.cpp"
+#include "Array.tpp"
 
 #endif /* *********************************************************** ARRAY_H */

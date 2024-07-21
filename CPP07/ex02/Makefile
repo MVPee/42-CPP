@@ -1,8 +1,7 @@
 NAME = array
 
 OBJS_DIR = objs
-SRCS = 	main.cpp \
-		Array.cpp
+SRCS = 	main.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
