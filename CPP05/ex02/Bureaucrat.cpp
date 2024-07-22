@@ -55,7 +55,7 @@ void Bureaucrat::increment(void) {
 
 void Bureaucrat::decrement(void) {
 	if (this->_grade + 1 > 150)
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 	this->_grade++;
 }
 
