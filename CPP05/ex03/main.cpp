@@ -17,7 +17,7 @@ int main(void) {
         delete rrf;
     }
     catch (std::exception &e) {
-        std::cerr << e.what() << std::endl;
+        std::cerr << ORANGE << e.what() << NONE << std::endl;
     }
 
     std::cout << std::endl;
@@ -28,7 +28,7 @@ int main(void) {
         delete rrf;
     }
     catch (std::exception &e) {
-        std::cerr << e.what() << std::endl;
+        std::cerr << ORANGE << e.what() << NONE << std::endl;
     }
 
     std::cout << std::endl;
@@ -39,7 +39,7 @@ int main(void) {
         delete rrf;
     }
     catch (std::exception &e) {
-        std::cerr << e.what() << std::endl;
+        std::cerr << ORANGE << e.what() << NONE << std::endl;
     }
 
     std::cout << std::endl;
@@ -50,7 +50,7 @@ int main(void) {
         delete rrf;
     }
     catch (std::exception &e) {
-        std::cerr << e.what() << std::endl;
+        std::cerr << ORANGE << e.what() << NONE << std::endl;
     }
     return (0);
 }

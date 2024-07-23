@@ -31,6 +31,18 @@ Intern &Intern::operator=(Intern const &rhs) {
 ** --------------------------------- METHODS ----------------------------------
 */
 
+static AForm *newShrubbery(const std::string target) {
+	return (new ShrubberyCreationForm(target));
+}
+
+static AForm *newRobotomy(const std::string target) {
+	return (new RobotomyRequestForm(target));
+}
+
+static AForm *newPresidential(const std::string target) {
+	return (new PresidentialPardonForm(target));
+}
+
 AForm* Intern::makeForm(std::string name, std::string target) {
 	std::string formNames[] = {
 		ROBOTOMY_REQUEST_FORM,
@@ -38,17 +50,12 @@ AForm* Intern::makeForm(std::string name, std::string target) {
 		SHRUBBERY_CREATION_FORM
 	};
 	
+	AForm* (*formConstructors[3])(const std::string) = {&newShrubbery, &newPresidential, &newRobotomy};
+
 	for (int i = 0; i < 3; i++) {
 		if (name == formNames[i]) {
 			std::cout << "Intern creates " << name << std::endl;
-			switch (i) {
-				case ROBOTOMY_FORM:
-					return (new RobotomyRequestForm(target));
-				case PRESIDENTIAL_FORM:
-					return (new PresidentialPardonForm(target));
-				case SHRUBBERY_FORM:
-					return (new ShrubberyCreationForm(target));
-			}
+			return (formConstructors[i](target));
 		}
 	}
 
