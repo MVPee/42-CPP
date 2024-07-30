@@ -1,4 +1,4 @@
-NAME = array
+NAME = easyfind
 
 OBJS_DIR = objs
 SRCS = 	main.cpp

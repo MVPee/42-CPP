@@ -1,4 +1,4 @@
-NAME = array
+NAME = abomination
 
 OBJS_DIR = objs
 SRCS = 	main.cpp

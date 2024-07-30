@@ -1,4 +1,4 @@
-NAME = array
+NAME = span
 
 OBJS_DIR = objs
 SRCS = 	main.cpp
