@@ -5,19 +5,12 @@
 # include <iterator>
 # include <exception>
 
-class NotFoundException : public std::exception {
-public:
-    virtual const char* what() const throw() {
-        return "Value not found...";
-    }
-};
-
 template <typename T>
 typename T::iterator easyfind(T& container, int value) {
     typename T::iterator it = std::find(container.begin(), container.end(), value);
     if (it == container.end())
-        throw NotFoundException();
-    return it;
+        throw std::runtime_error("Value not found...");
+    return (it);
 }
 
 #endif
