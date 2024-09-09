@@ -1,7 +1,8 @@
 NAME = span
 
 OBJS_DIR = objs
-SRCS = 	main.cpp
+SRCS = 	main.cpp \
+		Span.cpp
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
 
@@ -26,7 +27,6 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@rm -rf *_shrubbery
 
 re: fclean all
 
