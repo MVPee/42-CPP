@@ -10,8 +10,8 @@ class Span {
 		std::list<int>	_list;
 		unsigned int	_size;
 
-		Span();
 	public:
+		Span();
 		Span(unsigned int size);
 		Span(const Span &src);
 		Span &operator=(const Span &rhs);

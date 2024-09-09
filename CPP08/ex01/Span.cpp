@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Span::Span() {
+Span::Span() : _size(5){
 }
 Span::Span(unsigned int size) : _size(size){}
 
