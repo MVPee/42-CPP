@@ -10,7 +10,7 @@ Span::Span(unsigned int size) : _size(size){}
 
 Span::Span(const Span &src) {
 	_size = src._size;
-	_list = src._list;
+	_vec = src._vec;
 }
 
 /*
@@ -26,7 +26,7 @@ Span::~Span() {
 
 Span &Span::operator=(const Span &rhs) {
 	if ( this != &rhs )
-		_list = rhs._list;
+		_vec = rhs._vec;
 	return *this;
 }
 
@@ -40,40 +40,37 @@ std::ostream &operator<<(std::ostream &o, const Span &i) {
 */
 
 void Span::addNumber(int number) {
-	if (_list.size() < _size)
-		_list.push_back(number);
+	if (_vec.size() < _size)
+		_vec.push_back(number);
 	else
 		throw std::length_error("Span is full...");
-};
+}
+
+void Span::addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end) {
+    if (_vec.size() + std::distance(start, end) > _size)
+        throw std::out_of_range("out of range...");
+    _vec.assign(start, end);
+}
 
 int Span::shortestSpan(void) {
-    if (_list.size() < 2)
-        throw std::length_error("Span needs at least two elements for this function...");
-
-    std::list<int> copy = _list;
-    std::list<int>::const_iterator start;
-    std::list<int>::const_iterator next;
-
-    copy.sort();
-    start = copy.begin();
-    next = ++copy.begin();
-    int shortest = *next - *start;
-    while (next != copy.end()) {
-        ++start;
-        ++next;
-        if (next != copy.end() && (*next - *start) < shortest)
-            shortest = *next - *start;
+    if (_vec.size() < 2)
+        throw std::length_error("need two elements for this function");
+    std::vector<int> _copy(_vec);
+    std::sort(_copy.begin(), _copy.end());
+    int result = INT_MAX;
+    for (size_t i = 0; i < _copy.size() - 1; i++) {
+        if (_copy[i + 1] - _copy[i] < result)
+            result = _copy[i + 1] - _copy[i];
     }
-
-    return (shortest);
+    return (result);
 }
 
 int Span::longestSpan(void) {
-	if (_list.size() < 2)
-		throw std::length_error("Span need two elements for this function...");
-	std::list<int>::const_iterator start = _list.begin();
-    std::list<int>::const_iterator end = _list.end();
-	return (*std::max_element(start, end) - *std::min_element(start, end));
+    if (_vec.size() < 2)
+        throw std::length_error("need two elements for this function");
+    std::vector<int> _copy(_vec);
+    std::sort(_copy.begin(), _copy.end());
+    return _copy.back() - _copy.front();
 }
 
 /*

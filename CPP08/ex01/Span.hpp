@@ -3,12 +3,12 @@
 
 # include <iostream>
 # include <string>
-# include <list>
+# include <vector>
 
 class Span {
 	private:
-		std::list<int>	_list;
-		unsigned int	_size;
+		std::vector<int>	_vec;
+		unsigned int		_size;
 
 	public:
 		Span();
@@ -18,6 +18,7 @@ class Span {
 		~Span();
 
 		void addNumber(int number);
+		void addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
 		int shortestSpan(void);
 		int longestSpan(void);
 };
