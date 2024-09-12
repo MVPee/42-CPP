@@ -16,12 +16,23 @@ int main(void) {
         std::cerr << e.what() << std::endl;
     }
 
+    std::cout << std::endl;
     std::cout << "*** PART 2 ***" << std::endl;
     Span sp2 = Span(10000);
     std::vector<int> vector(10000, 10);
     try {
         sp2.addNumber(vector.begin(), vector.end());
         sp2.addNumber(5);
+    }
+    catch (std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+
+    std::cout << std::endl;
+    std::cout << "*** PART 3 ***" << std::endl;
+    Span sp3 = Span(5);
+    try {
+        sp3.shortestSpan();
     }
     catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
