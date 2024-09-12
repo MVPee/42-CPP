@@ -7,8 +7,8 @@ NC=\033[0m
 OBJS_DIR := objs
 SOURCES := main.cpp
 
-OBJECTS := $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SOURCES))
-DEPENDS := $(patsubst %.cpp,$(OBJS_DIR)/%.d,$(SOURCES))
+OBJECTS = $(addprefix $(OBJS_DIR)/, $(SOURCES:%.cpp=%.o))
+DEPENDS := $(addprefix $(OBJS_DIR)/, $(SOURCES:%.cpp=%.d))
 
 CXX := c++
 CXXFLAGS := -std=c++98 -Wall -Werror -Wextra
