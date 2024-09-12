@@ -27,21 +27,18 @@ int main() {
     std::cout << "*** PART2: Copying and assigning MutantStack ***" << std::endl;
     MutantStack<int> mstack_copy(mstack);
     std::cout << "Copy constructor, stack contents:" << std::endl;
-    for (MutantStack<int>::iterator it = mstack_copy.begin(); it != mstack_copy.end(); ++it) {
+    for (MutantStack<int>::iterator it = mstack_copy.begin(); it != mstack_copy.end(); ++it)
         std::cout << *it << std::endl;  // Should print same elements as mstack
-    }
 
     MutantStack<int> mstack_assigned;
     mstack_assigned.push(42); 
     std::cout << "Before assignment, stack contents:" << std::endl;
-    for (MutantStack<int>::iterator it = mstack_assigned.begin(); it != mstack_assigned.end(); ++it) {
+    for (MutantStack<int>::iterator it = mstack_assigned.begin(); it != mstack_assigned.end(); ++it)
         std::cout << *it << std::endl;  // Should print 42
-    }
     mstack_assigned = mstack;
     std::cout << "After assignment, stack contents:" << std::endl;
-    for (MutantStack<int>::iterator it = mstack_assigned.begin(); it != mstack_assigned.end(); ++it) {
+    for (MutantStack<int>::iterator it = mstack_assigned.begin(); it != mstack_assigned.end(); ++it)
         std::cout << *it << std::endl;  // Should print same elements as mstack
-    }
 
     std::cout << "*** PART3: Using MutantStack with std::stack and std::list ***" << std::endl;
     std::stack<int> s(mstack);
@@ -49,16 +46,14 @@ int main() {
 
     std::list<int> l(mstack.begin(), mstack.end());
     std::cout << "std::list constructed from MutantStack, list contents:" << std::endl;
-    for (std::list<int>::iterator lit = l.begin(); lit != l.end(); ++lit) {
+    for (std::list<int>::iterator lit = l.begin(); lit != l.end(); ++lit)
         std::cout << *lit << std::endl;  // Should print same elements as mstack
-    }
 
     std::cout << "*** PART4: Edge cases and additional tests ***" << std::endl;
     MutantStack<int> empty_stack;
     std::cout << "Empty stack, size: " << empty_stack.size() << std::endl;
-    if (empty_stack.empty()) {
+    if (empty_stack.empty())
         std::cout << "Stack is empty!" << std::endl;
-    }
 
     while (!mstack.empty()) {
         std::cout << "Popping top element: " << mstack.top() << std::endl;
