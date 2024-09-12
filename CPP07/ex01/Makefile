@@ -1,33 +1,39 @@
-NAME = iter
-
-OBJS_DIR = objs
-SRCS = 	main.cpp
-
-OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.cpp=%.o))
-
-FLAGS = -std=c++98 -Wall -Werror -Wextra
+NAME := iter
 
 RED=\033[0;31m
 GREEN=\033[0;32m
 NC=\033[0m
 
+OBJS_DIR := objs
+SOURCES := main.cpp
+
+OBJECTS := $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SOURCES))
+DEPENDS := $(patsubst %.cpp,$(OBJS_DIR)/%.d,$(SOURCES))
+
+CXX := g++
+CXXFLAGS := -std=c++98 -Wall -Werror -Wextra
+
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@c++ $(FLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJECTS)
+	@$(CXX) $(CXXFLAGS) $^ -o $@
 	@echo "\n${RED}./$(NAME)\n${NC}"
 
-$(OBJS_DIR)/%.o: %.cpp
+-include $(DEPENDS)
+
+$(OBJS_DIR)/%.o: %.cpp Makefile
 	@mkdir -p $(OBJS_DIR)
-	@c++ $(FLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
 clean:
-	@rm -rf $(OBJS_DIR)
+	@$(RM) -rf $(OBJS_DIR)
 
 fclean: clean
-	@rm -f $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
 run: all
 	./$(NAME)
+
+.PHONY: all clean fclean re run
