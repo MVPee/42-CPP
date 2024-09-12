@@ -7,7 +7,7 @@ NC=\033[0m
 OBJS_DIR := objs
 SOURCES := main.cpp
 
-OBJECTS = $(addprefix $(OBJS_DIR)/, $(SOURCES:%.cpp=%.o))
+OBJECTS := $(addprefix $(OBJS_DIR)/, $(SOURCES:%.cpp=%.o))
 DEPENDS := $(addprefix $(OBJS_DIR)/, $(SOURCES:%.cpp=%.d))
 
 CXX := c++
