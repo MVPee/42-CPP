@@ -6,7 +6,7 @@ NC=\033[0m
 
 OBJS_DIR := objs
 SOURCES := 	main.cpp \
-			Span.cpp	
+			RPN.cpp	
 
 OBJECTS := $(patsubst %.cpp,$(OBJS_DIR)/%.o,$(SOURCES))
 DEPENDS := $(patsubst %.cpp,$(OBJS_DIR)/%.d,$(SOURCES))
@@ -35,6 +35,6 @@ fclean: clean
 re: fclean all
 
 run: all
-	./$(NAME)
+	./$(NAME) "8 9 * 9 - 9 - 9 - 4 - 1 +"
 
 .PHONY: all clean fclean re run

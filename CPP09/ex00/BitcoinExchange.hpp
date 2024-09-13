@@ -13,7 +13,6 @@
 # include <fstream>
 # include <sstream>
 # include <map>
-# include <sstream>
 # include <string>
 
 class BitcoinExchange {
