@@ -22,13 +22,12 @@ class BitcoinExchange {
     	std::map<int, float> _value;
 
 		int findNearestDate(const std::string &date);
-	public:
 		BitcoinExchange();
-		BitcoinExchange(std::ifstream &file);
 		BitcoinExchange(const BitcoinExchange &src);
-		~BitcoinExchange();
-
 		BitcoinExchange &operator=(const BitcoinExchange &rhs);
+	public:
+		BitcoinExchange(std::ifstream &file);
+		~BitcoinExchange();
 
 		void processLine(const std::string &line);
 };
