@@ -5,7 +5,7 @@
 */
 
 template <typename T>
-static void displayContainer(const T& container)
+static void displayContainer(const T &container)
 {
     typename T::const_iterator it;
     for (it = container.begin(); it != container.end(); ++it)
