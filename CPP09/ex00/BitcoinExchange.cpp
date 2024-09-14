@@ -20,7 +20,7 @@ BitcoinExchange::BitcoinExchange(std::ifstream &data) {
 
         if (std::getline(line_stream, date, ',') && std::getline(line_stream, value_str)) {
             try {
-                value = std::stof(value_str);
+                value = atof(value_str.c_str());
 				_date[i] = date;
 				_value[i] = value;
             }
@@ -70,6 +70,17 @@ std::ostream &			operator<<(std::ostream &o, const BitcoinExchange &i) {
 ** --------------------------------- METHODS ----------------------------------
 */
 
+/*
+    ! Need to use that for linux instead of std::all_of on Mac
+*/
+template <typename Iterator, typename Function>
+static bool my_all_of(Iterator first, Iterator last, Function function) {
+    for (; first != last; ++first)
+        if (!function(*first))
+            return false;
+    return true;
+}
+
 static bool check_date(const std::string &date) {
     if (date.size() != 10 || date[4] != '-' || date[7] != '-')
         return true;
@@ -78,15 +89,15 @@ static bool check_date(const std::string &date) {
     std::string month_str = date.substr(5, 2);
     std::string day_str = date.substr(8, 2);
 
-    if (!std::all_of(year_str.begin(), year_str.end(), ::isdigit) ||
-        !std::all_of(month_str.begin(), month_str.end(), ::isdigit) ||
-        !std::all_of(day_str.begin(), day_str.end(), ::isdigit)) {
+    if (!my_all_of(year_str.begin(), year_str.end(), ::isdigit) ||
+        !my_all_of(month_str.begin(), month_str.end(), ::isdigit) ||
+        !my_all_of(day_str.begin(), day_str.end(), ::isdigit)) {
         return true;
     }
 
-    int year = std::stoi(year_str);
-    int month = std::stoi(month_str);
-    int day = std::stoi(day_str);
+    int year = atoi(year_str.c_str());
+    int month = atoi(month_str.c_str());
+    int day = atoi(day_str.c_str());
 
     if (month < 1 || month > 12)
         return true;
@@ -148,7 +159,7 @@ void BitcoinExchange::processLine(const std::string &line) {
 	}
 	value_str = line.substr(pos + 3);
 	try {
-		value = std::stof(value_str);
+		value = atof(value_str.c_str());
 		if (value < 0 || value > 1000) {
 			std::cout << count << "." << Y << "\tvalue is not beetwen 0 and 1000" << C << std::endl;
 			count ++;

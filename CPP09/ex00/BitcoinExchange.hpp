@@ -14,6 +14,8 @@
 # include <sstream>
 # include <map>
 # include <string>
+# include <climits>
+# include <cstdlib>
 
 class BitcoinExchange {
 	private:
