@@ -12,7 +12,7 @@ OBJECTS := $(addprefix $(OBJS_DIR)/, $(SOURCES:%.cpp=%.o))
 DEPENDS := $(addprefix $(OBJS_DIR)/, $(SOURCES:%.cpp=%.d))
 
 CXX := c++
-CXXFLAGS := -std=c++98 -Wall -Werror -Wextra
+CXXFLAGS := -std=c++98 -Wall -Werror -Wextra -g -fsanitize=address
 
 all: $(NAME)
 
@@ -35,6 +35,6 @@ fclean: clean
 re: fclean all
 
 run: all
-	./$(NAME)
+	./$(NAME) 3 5 9 7 4
 
 .PHONY: all clean fclean re run

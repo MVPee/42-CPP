@@ -5,20 +5,21 @@
 # include <string>
 # include <list>
 # include <deque>
-# include <time.h>
+# include <ctime>
 # include <cstdlib>
+# include <utility>
 
 class PmergeMe {
 	private:
 		std::list<int> 	_list;
 		std::deque<int>	_deque;
-	public:
-		PmergeMe();
-		PmergeMe(int ac, char **av);
-		PmergeMe(const PmergeMe &src);
-		~PmergeMe();
 
+		PmergeMe();
+		PmergeMe(const PmergeMe &src);
 		PmergeMe &operator=(const PmergeMe &rhs);
+	public:
+		PmergeMe(int ac, char **av);
+		~PmergeMe();
 };
 
 std::ostream &operator<<(std::ostream &o, const PmergeMe &i);
