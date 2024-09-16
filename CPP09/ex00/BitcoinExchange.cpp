@@ -115,7 +115,7 @@ static bool check_date(const std::string &date) {
     return false;
 }
 
-int dateToInt(const std::string &date) {
+static int dateToInt(const std::string &date) {
     int year, month, day;
     char dash1, dash2;
     std::istringstream iss(date);
