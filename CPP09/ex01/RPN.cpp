@@ -49,7 +49,7 @@ void RPN::processMethod(const std::string &line) {
 	else if (line == "*") result = n1 * n2;
 	else if (line == "/") {
 		if (n2 == 0) {
-			std::cerr << "Erreur: \"You can divise by 0\"" << std::endl;
+			std::cerr << "Erreur: \"You can't divise by 0\"" << std::endl;
 			exit (1);
 		}
 		else result = n1 / n2;
