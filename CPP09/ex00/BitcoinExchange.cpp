@@ -146,7 +146,7 @@ void BitcoinExchange::processLine(const std::string &line) {
 	std::string date, value_str;
 	float value;
 	date = line.substr(0, 10);
-	if (check_date(date)) {
+	if (check_date(date) || line[10] != ' ') {
 		std::cout << count << "." << Y << "\tdate format is not correct" << C << std::endl;
 		count ++;
 		return ;
