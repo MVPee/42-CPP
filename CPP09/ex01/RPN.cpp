@@ -79,8 +79,12 @@ void RPN::process(const std::string &input) {
 			}
         }
 	}
-	if (!_stack.empty())
-		std::cout << _stack.top() << std::endl;
+	std::cout << "[ ";
+	while(!_stack.empty()) {
+		std::cout << _stack.top() << " ";
+		_stack.pop();
+	}
+	std::cout << "]" << std::endl;
 }
 
 /*
