@@ -23,6 +23,4 @@ class RPN {
 		void processMethod(const std::string &line);
 };
 
-std::ostream &operator<<(std::ostream &o, const RPN &i);
-
 #endif /* ************************************************************* RPN_H */
