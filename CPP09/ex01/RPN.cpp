@@ -63,7 +63,6 @@ void RPN::process(const std::string &input) {
 	std::string line;
 	std::stringstream line_stream(input);
 	while(std::getline(line_stream, line, ' ')) {
-		std::cout << line << std::endl;
 		if (std::isdigit(line.at(0)))
 			_stack.push(atoi(line.c_str()));
 		else
