@@ -64,7 +64,11 @@ void RPN::process(const std::string &input) {
 		if (!line.empty()) {
             if ((line.at(0) == '-' && line.length() > 1 && std::isdigit(line.at(1))) || std::isdigit(line.at(0))) {
                 try {
-                    _stack.push(std::stoi(line));
+					#ifdef __APPLE__
+                    	_stack.push(std::stoi(line));
+					#else
+						_stack.push(atoi(line.c_str()));
+					#endif
                 }
                 catch (const std::invalid_argument&) {
                     std::cerr << "Erreur: \"" << line << "\"" << std::endl;
