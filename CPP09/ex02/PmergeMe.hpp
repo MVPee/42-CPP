@@ -23,6 +23,4 @@ class PmergeMe {
 		~PmergeMe();
 };
 
-std::ostream &operator<<(std::ostream &o, const PmergeMe &i);
-
 #endif /* ******************************************************** PMERGEME_H */

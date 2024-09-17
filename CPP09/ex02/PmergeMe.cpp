@@ -120,8 +120,7 @@ PmergeMe::PmergeMe(const PmergeMe &src) {
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-PmergeMe::~PmergeMe() {
-}
+PmergeMe::~PmergeMe() {}
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -133,11 +132,6 @@ PmergeMe &PmergeMe::operator=(const PmergeMe &rhs) {
 		_deque = rhs._deque;
 	}
 	return *this;
-}
-
-std::ostream &operator<<(std::ostream &o, const PmergeMe &i) {
-	(void)i;
-	return o;
 }
 
 /*
