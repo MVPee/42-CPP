@@ -8,6 +8,7 @@
 # include <ctime>
 # include <cstdlib>
 # include <utility>
+# include <limits.h>
 
 class PmergeMe {
 	private:

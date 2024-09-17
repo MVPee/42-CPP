@@ -75,18 +75,18 @@ PmergeMe::PmergeMe() {
 PmergeMe::PmergeMe(int ac, char **av) {
 	for (int i = 1; i < ac; i++) {
 		for (size_t j = 0; av[i][j]; j++) {
-			if (!isnumber(av[i][j])) {
+			if (!isdigit(av[i][j])) {
 				std::cerr << "Error: Not a valid number (" << av[i] << ")" << std::endl;
 				exit(1);
 			}
 		}
-		int nb = atoi(av[i]);
-		if (nb <= 0 || std::string(av[i]).length() > 10) {
+		float nb = atol(av[i]);
+		if (nb <= 0 || nb > INT_MAX || std::string(av[i]).length() > 10) {
 			std::cerr << "Error: Only positif integers allowed. (" + std::string(av[i]) + ")" << std::endl;
 			exit(1);
 		}
-		_deque.push_back(nb);
-		_list.push_back(nb);
+		_deque.push_back(static_cast<int>(nb));
+		_list.push_back(static_cast<int>(nb));
 	}
 	std::cout << "Before: ";
 	displayContainer(_deque);
