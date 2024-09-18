@@ -33,6 +33,4 @@ class BitcoinExchange {
 		void processLine(const std::string &line);
 };
 
-std::ostream &operator<<(std::ostream &o, const BitcoinExchange &i);
-
 #endif /* ************************************************* BITCOINEXCHANGE_H */

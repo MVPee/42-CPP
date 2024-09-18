@@ -4,8 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-BitcoinExchange::BitcoinExchange() {
-}
+BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::BitcoinExchange(std::ifstream &data) {
     std::string line, date;
@@ -45,9 +44,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &src) {
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-BitcoinExchange::~BitcoinExchange() {
-}
-
+BitcoinExchange::~BitcoinExchange() {}
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
@@ -59,12 +56,6 @@ BitcoinExchange &				BitcoinExchange::operator=(const BitcoinExchange &rhs) {
 	}
 	return *this;
 }
-
-std::ostream &			operator<<(std::ostream &o, const BitcoinExchange &i) {
-	(void)i;
-	return o;
-}
-
 
 /*
 ** --------------------------------- METHODS ----------------------------------
