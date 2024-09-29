@@ -18,3 +18,26 @@
 >C++ training
 
 This project is about learning basic and some advanced C++ concepts.
+
+---
+
+**Module 00**  
+  -- This Module is designed to help you understand the specifities of the language when compared to C.    
+**Module 01**  
+  -- Allocation, reference, pointers to members and the usage of the switch  
+**Module 02**  
+  -- Polymorphism, overloads and orthodox canonical classes  
+**Module 03**  
+  -- Inheritance  
+**Module 04**  
+  -- Subtype polymorphism, abstract classes and interfaces  
+**Module 05**  
+  -- Try/Catch and Exceptions  
+**Module 06**  
+  -- This Module is designed to help you understand the different casts  
+**Module 07**  
+  -- Templates  
+**Module 08**  
+  -- Templated containers, iterators and algorithms  
+**Module 09**  
+  -- More containers problems, create Bitcoin exchange, RPN algorithm, and JohnsonSort algorithm  
